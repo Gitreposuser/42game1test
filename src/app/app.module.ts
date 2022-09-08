@@ -8,7 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CardComponent } from './card/card.component';
-import { Game1Component } from './game1/game1.component';
+import { Game1Component } from './pages/game1/game1.component';
 
 @NgModule({
   declarations: [
