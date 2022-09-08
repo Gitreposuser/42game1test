@@ -1,0 +1,42 @@
+.btn{
+    opacity: 0.5;
+    margin: 20px;
+    width: 200px;
+    height: 100px;
+    border-radius: 45px;
+    border: none;
+    outline: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: x-large;
+    font-weight: 900;
+    color: #d1a21f;
+    text-shadow: white 2px 2px 0;
+    background: no-repeat center/100% url("../../assets/images/pcbgreybackground.gif");
+    animation-name: zoomout;
+    animation-duration: 1s;
+}
+
+.btn:hover{
+    opacity: 1;
+    cursor: pointer;
+    animation-name: zoomin;
+    animation-duration: 2s;
+}
+
+@keyframes zoomin{
+    from{
+        background: no-repeat center/100% url("../../assets/images/pcbgreybackground.gif");
+    }
+    to {
+        background: no-repeat center/400% url("../../assets/images/pcbgreybackground.gif");
+    }
+}
+
+@keyframes zoomout{
+    from{
+        background: no-repeat center/400% url("../../assets/images/pcbgreybackground.gif");
+    }
+    to {
+        background: no-repeat center/100% url("../../assets/images/pcbgreybackground.gif");
+    }
+}

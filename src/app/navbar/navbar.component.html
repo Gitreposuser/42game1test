@@ -1,13 +1,18 @@
 <div class="navbar-container">
     <div class="navbar-left">
-        <button class="btn success, button">Home</button>
-        <button class="btn success, button">Game1</button>
+        <app-navbutton (btnClick)="onHomeClick()"
+        text="Home" [isDisabled]="false"></app-navbutton>
+        <app-navbutton (btnClick)="onGame1Click()"
+        text="Game1" [isDisabled]="false"></app-navbutton>  
     </div>
     <div class="navbar-center">
-        <img class="logo" src="../../assets/images/logo.gif" alt="logo not found">
+        <img class="logo" src="../../assets/images/logo.gif" alt="logo not found"
+        (click)="onAboutClick()">
     </div>
     <div class="navbar-right">
-        <button class="btn success, button">About</button>
-        <button class="btn success, button">Contacts</button>
+        <app-navbutton (btnClick)="onLeaderbordClick()"
+        text="Leaderbord" [isDisabled]="false"></app-navbutton>
+        <app-navbutton (btnClick)="onAboutClick()"
+        text="About" [isDisabled]="false"></app-navbutton>
     </div>
 </div>
