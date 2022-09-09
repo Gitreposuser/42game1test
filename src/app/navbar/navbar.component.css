@@ -29,7 +29,7 @@
 
 .logo:hover{
     animation-name: logozoomin;
-    animation-duration: 2s;
+    animation-duration: 3s;
 }
 
 @keyframes logorotate{
@@ -37,13 +37,16 @@
         transform: rotateZ(0deg);
     }
     20% {
-        transform: rotateZ(20deg);
+        transform: rotateZ(40deg);
     }
     40% {
         transform: rotateZ(-20deg);
     }
     60% {
         transform: rotateZ(10deg);
+    }
+    80%{
+        transform: rotateZ(-5deg);
     }
     100% {
         transform: rotateZ(0deg);
@@ -52,6 +55,9 @@
 
 @keyframes logozoomin{
     0% {
+        transform: scale(120%);
+    }
+    10%{
         transform: scale(100%);
     }
     20% {
@@ -62,7 +68,7 @@
         transform: scale(120%);
     }
     100% {
-        transform: scale(100%);
+        transform: scale(120%);
         opacity: 1;
     }
 }

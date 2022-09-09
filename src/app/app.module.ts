@@ -9,6 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { CardComponent } from './card/card.component';
 import { Game1Component } from './pages/game1/game1.component';
 import { NavbuttonComponent } from './navbutton/navbutton.component';
+import { PrepareComponent } from './pages/prepare/prepare.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NavbuttonComponent } from './navbutton/navbutton.component';
     NavbarComponent,
     CardComponent,
     Game1Component,
-    NavbuttonComponent
+    NavbuttonComponent,
+    PrepareComponent
   ],
   imports: [
     BrowserModule,

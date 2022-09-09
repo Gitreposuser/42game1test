@@ -18,7 +18,7 @@ export class NavbarComponent implements OnInit {
   }
 
   onGame1Click(): void{
-    this.router.navigate(['game1']);
+    this.router.navigate(['prepare']);
   }
 
   onAboutClick(): void{

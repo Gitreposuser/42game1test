@@ -11,6 +11,164 @@
     position: fixed;
     top: 0;
     left: 0;
-    
+    /*
     background-image: url("../assets/images/42test.png");
+    */
+}
+
+.noselect{
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+.background-text{
+    position: absolute;
+    z-index: -2;
+    top: -300px;
+    left: -200px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: xx-large;
+    font-weight: 900;
+    text-shadow: yellow 2px 2px 20px;
+    color: white;
+    transform: rotate(30deg);
+}
+
+.spacer{
+    color: white;
+    text-shadow: white 2px 2px 20px;
+}
+
+.letter1{
+    animation: anim1 5s linear infinite;
+}
+
+.letter2{
+    animation: anim2 5s linear infinite;
+}
+
+.letter3{
+    animation: anim3 5s linear infinite;
+}
+
+.letter4{
+    animation: anim4 5s linear infinite;
+}
+
+.letter5{
+    animation: anim5 5s linear infinite;
+}
+
+.letter6{
+    animation: anim6 5s linear infinite;
+}
+
+@keyframes anim1{
+    0%{
+        text-shadow: white 2px 2px 2px;
+    }
+    10%{
+        text-shadow: rgb(143, 143, 37) 2px 2px 10px;
+    }
+    40%{
+        text-shadow: white 2px 2px 2px;
+    }
+    100%{
+        text-shadow: white 2px 2px 2px;
+    }
+}
+
+@keyframes anim2{
+    0%{
+        text-shadow: white 2px 2px 2px;
+    }
+    10%{
+        text-shadow: white 2px 2px 2px;
+    }
+    20%{
+        text-shadow: rgb(88, 23, 88) 2px 2px 10px;
+    }
+    50%{
+        text-shadow: white 2px 2px 2px;
+    }
+    100%{
+        text-shadow: white 2px 2px 2px;
+    }
+}
+
+@keyframes anim3{
+    0%{
+        text-shadow: white 2px 2px 2px;
+    }
+    20%{
+        text-shadow: white 2px 2px 2px;
+    }
+    30%{
+        text-shadow: rgb(88, 23, 88) 2px 2px 10px;
+    }
+    60%{
+        text-shadow: white 2px 2px 2px;
+    }
+    100%{
+        text-shadow: white 2px 2px 2px;
+    }
+}
+
+@keyframes anim4{
+    0%{
+        text-shadow: white 2px 2px 2px;
+    }
+    30%{
+        text-shadow: white 2px 2px 2px;
+    }
+    40%{
+        text-shadow: rgb(88, 23, 88) 2px 2px 10px;
+    }
+    70%{
+        text-shadow: white 2px 2px 2px;
+    }
+    100%{
+        text-shadow: white 2px 2px 2px;
+    }
+}
+
+@keyframes anim5{
+    0%{
+        text-shadow: white 2px 2px 2px;
+    }
+    40%{
+        text-shadow: white 2px 2px 2px;
+    }
+    50%{
+        text-shadow: rgb(88, 23, 88) 2px 2px 10px;
+    }
+    80%{
+        text-shadow: white 2px 2px 2px;
+    }
+    100%{
+        text-shadow: white 2px 2px 2px;
+    }
+}
+
+@keyframes anim6{
+    0%{
+        text-shadow: white 2px 2px 2px;
+    }
+    50%{
+        text-shadow: white 2px 2px 2px;
+    }
+    60%{
+        text-shadow: rgb(88, 23, 88) 2px 2px 10px;
+    }
+    90%{
+        text-shadow: white 2px 2px 2px;
+    }
+    100%{
+        text-shadow: white 2px 2px 2px;
+    }
 }

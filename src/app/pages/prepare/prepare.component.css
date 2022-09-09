@@ -1,0 +1,36 @@
+.prepare-container{
+    display: flex;
+    margin-top: 15%;            /* Fix this! */
+    justify-content: center;
+    justify-items: center;
+}
+
+.prepare-button{
+    position: absolute;
+    justify-content: center;
+    justify-items: center;
+    width: 300px;
+    height: 100px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: xx-large;
+    font-weight: 800;
+    transition: all 1s;
+    border: 2px solid;
+    border-radius: 20px;
+    background-color: white; 
+    color: green;  
+}
+
+.prepare-button:hover{
+    transition: all 2s;
+    border: 8px solid;
+    border-radius: 55px;
+    background-color: black;
+    color: yellow;
+    letter-spacing: 4px;
+}
+
+.prepare-button:active{
+    transition: all 0.5s;
+    transform: scale(10%);
+}
