@@ -11,9 +11,6 @@
     position: fixed;
     top: 0;
     left: 0;
-    /*
-    background-image: url("../assets/images/42test.png");
-    */
 }
 
 .noselect{
@@ -69,7 +66,7 @@
 }
 
 @keyframes anim1{
-    0%{
+    0%{        
         text-shadow: white 2px 2px 2px;
     }
     10%{

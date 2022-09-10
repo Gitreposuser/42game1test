@@ -1,12 +1,11 @@
 .prepare-container{
     display: flex;
-    margin-top: 15%;            /* Fix this! */
+    height: 100vh;
     justify-content: center;
-    justify-items: center;
+    align-items: center;
 }
 
 .prepare-button{
-    position: absolute;
     justify-content: center;
     justify-items: center;
     width: 300px;
