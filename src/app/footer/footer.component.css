@@ -37,12 +37,22 @@
     text-decoration: underline red 4px;
 }
 
-.p{
+.head{
     transition: all 1s;
     color: white;
 }
 
-.p:hover{
+.head:hover{
     transition: all 1s;
     color: yellow;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
 }

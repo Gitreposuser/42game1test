@@ -11,6 +11,7 @@ import { Game1Component } from './pages/game1/game1.component';
 import { NavbuttonComponent } from './navbutton/navbutton.component';
 import { PrepareComponent } from './pages/prepare/prepare.component';
 import { AboutComponent } from './about/about.component';
+import { BackgroundComponent } from './background/background.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AboutComponent } from './about/about.component';
     Game1Component,
     NavbuttonComponent,
     PrepareComponent,
-    AboutComponent
+    AboutComponent,
+    BackgroundComponent
   ],
   imports: [
     BrowserModule,
