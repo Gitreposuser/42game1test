@@ -27,12 +27,14 @@
 }
 
 .link{
-    text-decoration: none;
+    transition: all 1s;
 }
 
 .link:hover{
     cursor: pointer;
-    text-decoration: underline;
+    transition: all 1s;
+    letter-spacing: 4px;
+    text-decoration: underline red 4px;
 }
 
 .p{

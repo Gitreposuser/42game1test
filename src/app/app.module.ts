@@ -10,6 +10,7 @@ import { CardComponent } from './card/card.component';
 import { Game1Component } from './pages/game1/game1.component';
 import { NavbuttonComponent } from './navbutton/navbutton.component';
 import { PrepareComponent } from './pages/prepare/prepare.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PrepareComponent } from './pages/prepare/prepare.component';
     CardComponent,
     Game1Component,
     NavbuttonComponent,
-    PrepareComponent
+    PrepareComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
