@@ -3,5 +3,16 @@
     width: 160px;
     border: 3px solid #739cb3;
     border-radius: 5px;
+}
+
+.backgroundColorBlue{
     background-color: #88a4b3;
+}
+
+.backgroundColorGreen{
+    background-color: rgb(70, 145, 70);
+}
+
+.backgroundColorRed{
+    background-color: rgb(192, 69, 69);
 }

@@ -3,11 +3,14 @@
     </div>
     <div class="column-center">
         <div class="column-container">
-            <div class="cards-container">
-                <app-card *ngFor="let item of items"></app-card>
+            <div class="cards-container" (click)="onClick()">
+                <app-card *ngFor="let item of cards"></app-card>
             </div>
         </div>
     </div>
     <div class="column-right">
+        <ul>
+            <li *ngFor="let item of cards">{{item}}</li>
+        </ul>
     </div>
 </div>
