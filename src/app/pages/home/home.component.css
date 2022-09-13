@@ -11,3 +11,9 @@
     width: 60%;
     justify-content: center;
 }
+
+.text{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+    font-weight: 500;
+}
