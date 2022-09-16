@@ -1,1 +1,22 @@
-<p>about works!</p>
+<app-background></app-background>
+<div class="about-container">
+    <div class="about-spacer"></div>
+    <div class="about-center-column">
+        <div class="about-center-container">
+            <div>
+                <h1>
+                    About me
+                </h1>
+                <br><br>
+            </div>
+            <div>
+                <img src="{{this.path}}{{this.photo}}" (click)="onImgClick()" alt="photo not found">
+            </div>
+            <br><br>
+            <div>
+                <button class="about-btn" (click)="onBackClick()">Back home</button>
+            </div>
+        </div>
+    </div>
+    <div class="about-spacer"></div>
+</div>
