@@ -58,3 +58,10 @@ a:hover{
               user-select: none; /* Non-prefixed version, currently
                                     supported by Chrome, Edge, Opera and Firefox */
 }
+
+hr{
+    display: block;
+    color: rgb(211, 65, 65);
+    border-style: solid;
+    border-width: 2px;
+}
