@@ -1,16 +1,16 @@
 <div class="container">
-    <div class="column-left">
-    </div>
+    <div class="column-left"></div>
     <div class="column-center">
         <div class="column-container">
-            <div class="cards-container" (click)="onClick()">
-                <app-card *ngFor="let item of cards"></app-card>
+            <div class="cards-container">
+                <app-card *ngFor="let item of cards" 
+                [chCardId]="item.cardId"
+                [chIsWin]="item.isWinn"
+                [chSerialNumber]="item.serialNumber"
+                (getData)="getData($event)"
+                ></app-card>
             </div>
         </div>
     </div>
-    <div class="column-right">
-        <ul>
-            <li *ngFor="let item of cards">{{item}}</li>
-        </ul>
-    </div>
+    <div class="column-right"></div>
 </div>

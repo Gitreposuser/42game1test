@@ -1,4 +1,9 @@
-<div class="card-container" (click)="cardClicked()" 
+<div class="card-container" 
     [ngClass]="{backgroundColorBlue:true,
                 backgroundColorRed:false,
-                backgroundColorGreen:false}"></div>
+                backgroundColorGreen:false}"
+                (click)="getId(chSerialNumber)">
+    <p>{{ chCardId }}</p>
+    <p>{{ chIsWin }}</p>
+    <p>{{ chSerialNumber }}</p>
+</div>

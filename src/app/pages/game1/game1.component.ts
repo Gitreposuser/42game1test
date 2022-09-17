@@ -7,55 +7,105 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class Game1Component implements OnInit {
-  length = 9;
-  items = new Array<number>(length);
-  cards = new Array<number>(this.length);
+  length;
+  cards;
+  counter;
+  winCounter;
+  winCards;
+  lastCard;
+  
+  constructor(){
+    this.length = 9;
+    this.cards = new Array<Card>(this.length);
+    this.counter = 0;
+    this.winCounter = 0;
+    this.winCards = 0;
+    this.lastCard = 0;
 
-  constructor() { 
-    for(let i = 0; i < this.length; i++)
-    {
-      this.items[i] = 0;
-    }
+    this.initCards();
+    this.mixCards();
   }
   
   ngOnInit(): void {
-    this.initCardStack()
   }
-
-  mixCardDeck(): void {
-    let buffer = 0;
-    for(let i = 0; i < 100; i++)
+  
+  initCards(): void{
+    let win = false;
+    for(let i = 0; i < this.length; i++)
     {
-      let ind1 = Math.floor(Math.random() * this.length);
-      let ind2 = Math.floor(Math.random() * this.length);
-
-      buffer = this.cards[ind1];
-      this.cards[ind1] = this.cards[ind2];
-      this.cards[ind2] = buffer;
+      win = this.generateCard();
+      if(win)
+      {
+        this.winCards++;
+        this.cards[i] = new Card(i, win, this.winCards);
+      }
+      else
+      {
+        this.cards[i] = new Card(i, win, 0);
+      }
     }
   }
 
-  generateCard(): number {
+  mixCards(): void{
+    let buffer: Card;
+    for(let i = 0; i < 20; i++)
+    {
+      let indexA = Math.floor(Math.random() * this.length);
+      let indexB = Math.floor(Math.random() * this.length);
+      buffer = this.cards[indexA];
+      this.cards[indexA] = this.cards[indexB];
+      this.cards[indexB] = buffer;
+    }
+  }
+
+  generateCard(): boolean {
     let num = Math.floor(Math.random() * 10);
 
     if(5 < num) 
     {
-      return 1;
+      return true;
     }
     else 
     {
-      return 0;
+      return false;
     }
   }
-
-  initCardStack(): void{
-    for(let i = 0; i < this.cards.length; i++){
-      this.cards[i] = this.generateCard();
-    }
-    this.mixCardDeck();
+  
+  getData(serial:number): void{
+    console.log("getData() serial of clicked card: " + serial);
+    this.lastCard = serial;
+    this.checkWin();
   }
 
-  onClick(): void {
-     
+  checkWin(): void{
+    this.counter++; 
+    console.log("last card: " + this.lastCard + " counter: " + this.counter);
+    if(this.lastCard === this.counter)
+    {
+      if(this.counter === this.winCards)
+      {
+        console.log("Win game");
+      }
+      if(this.counter > this.winCards)
+      {
+        console.log("Lose1 game");
+      }
+    }
+    else
+    {
+      console.log("Lose2 game");
+    }
+  }
+}
+
+export class Card {
+  cardId: number;
+  isWinn: boolean;
+  serialNumber: number;
+
+  constructor(id: number, win: boolean, sn: number){
+    this.cardId =id;
+    this.isWinn = win;
+    this.serialNumber = sn;
   }
 }

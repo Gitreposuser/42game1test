@@ -1,6 +1,4 @@
-import { Component, Input, Output } from '@angular/core';
-//import { EventEmitter } from 'stream';
-import { ICardData } from './card';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -9,16 +7,13 @@ import { ICardData } from './card';
 })
 
 export class CardComponent{
-  @Input() data: ICardData = { cardId: 0, state: "default"};
-//  @Output() CardComponent = new EventEmitter();
+  @Input() chCardId: number = 0;
+  @Input() chIsWin: boolean = false;
+  @Input() chSerialNumber = 0;
 
-  constructor() { }
-  
-  cardClicked(): void{
-    if(this.data.state === "default"){
-      this.data.state = "flipped";
-    } else {
-      this.data.state = "default";
-    }
+  @Output() getData = new EventEmitter<number>();
+
+  getId(serial:number){
+    this.getData.emit(serial);
   }
 }
