@@ -31,17 +31,18 @@ export class Game1Component implements OnInit {
   
   initCards(): void{
     let win = false;
+    let st = "default";
     for(let i = 0; i < this.length; i++)
     {
       win = this.generateCard();
       if(win)
       {
         this.winCards++;
-        this.cards[i] = new Card(i, win, this.winCards);
+        this.cards[i] = new Card(i, win, this.winCards, st);
       }
       else
       {
-        this.cards[i] = new Card(i, win, 0);
+        this.cards[i] = new Card(i, win, 0, st);
       }
     }
   }
@@ -71,16 +72,17 @@ export class Game1Component implements OnInit {
     }
   }
   
-  getData(serial:number): void{
-    console.log("getData() serial of clicked card: " + serial);
-    this.lastCard = serial;
+  getData(cardId:number): void{
+    console.log("getData() id of clicked card: " + cardId);
+    this.lastCard = cardId;
     this.checkWin();
   }
 
   checkWin(): void{
     this.counter++; 
-    console.log("last card: " + this.lastCard + " counter: " + this.counter);
-    if(this.lastCard === this.counter)
+    console.log("serial: " + this.cards[this.lastCard].serialNumber + 
+      " counter: " + this.counter);
+    if(this.cards[this.lastCard].serialNumber === this.counter)
     {
       if(this.counter === this.winCards)
       {
@@ -88,11 +90,13 @@ export class Game1Component implements OnInit {
       }
       if(this.counter > this.winCards)
       {
+        this.cards[this.lastCard].state = "lose";
         console.log("Lose1 game");
       }
     }
     else
     {
+      this.cards[this.lastCard].state = "lose";
       console.log("Lose2 game");
     }
   }
@@ -102,10 +106,12 @@ export class Card {
   cardId: number;
   isWinn: boolean;
   serialNumber: number;
+  state: string;
 
-  constructor(id: number, win: boolean, sn: number){
+  constructor(id: number, win: boolean, sn: number, st: string){
     this.cardId =id;
     this.isWinn = win;
     this.serialNumber = sn;
+    this.state = st;
   }
 }

@@ -3,16 +3,37 @@
     width: 160px;
     border: 3px solid #739cb3;
     border-radius: 5px;
+
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
 }
 
-.backgroundColorBlue{
+.card-container:active{
+    transition: all 0.3s;
+    transform: rotateY(180deg);
+    /*
+    animation: clickAnim 0.3s;
+    */
+}
+
+@keyframes clickAnim {
+    from{
+        transform: rotateY(0deg);
+    }
+    to{
+        transform: rotateY(180deg);
+    }
+}
+
+.default{
     background-color: #88a4b3;
 }
 
-.backgroundColorGreen{
+.flipped{
     background-color: rgb(70, 145, 70);
 }
 
-.backgroundColorRed{
+.lose{
     background-color: rgb(192, 69, 69);
 }

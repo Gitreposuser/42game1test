@@ -10,10 +10,21 @@ export class CardComponent{
   @Input() chCardId: number = 0;
   @Input() chIsWin: boolean = false;
   @Input() chSerialNumber = 0;
+  @Input() chState = 'default';
 
   @Output() getData = new EventEmitter<number>();
 
-  getId(serial:number){
-    this.getData.emit(serial);
+  getId(chCardId:number){
+    this.getData.emit(chCardId);
+    /*
+    if('default' === this.chState)
+    {
+      this.chState = 'flipped';
+    }
+    else
+    {
+      this.chState = 'default';
+    }
+    */
   }
 }

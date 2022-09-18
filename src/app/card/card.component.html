@@ -1,9 +1,8 @@
-<div class="card-container" 
-    [ngClass]="{backgroundColorBlue:true,
-                backgroundColorRed:false,
-                backgroundColorGreen:false}"
-                (click)="getId(chSerialNumber)">
-    <p>{{ chCardId }}</p>
-    <p>{{ chIsWin }}</p>
-    <p>{{ chSerialNumber }}</p>
+<div class="card-container"
+    [class]="chState"
+    (click)="getId(chCardId)">
+        <p>CardId {{ chCardId }}</p>
+        <p>IsWin {{ chIsWin }}</p>
+        <p>Serial {{ chSerialNumber }}</p>
+        <p>State {{ chState }}</p>
 </div>
