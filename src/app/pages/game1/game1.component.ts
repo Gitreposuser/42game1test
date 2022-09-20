@@ -8,54 +8,54 @@ import { Component, OnInit } from '@angular/core';
 
 export class Game1Component implements OnInit {
   length;
+  winLength;
   cards;
-  counter;
-  winCounter;
   winCards;
+  counter;
   lastCard;
   
   constructor(){
     this.length = 9;
+    this.winLength = Math.round(this.length /2);
     this.cards = new Array<Card>(this.length);
+    this.winCards = new Array<number>(this.winLength);
     this.counter = 0;
-    this.winCounter = 0;
-    this.winCards = 0;
     this.lastCard = 0;
 
     this.initCards();
     this.mixCards();
+
+    console.log("win cards: ");
+    for(let i = 0; i < this.winLength; i++)
+    {
+      console.log(this.winCards[i] + ", ");
+    }
   }
   
   ngOnInit(): void {
   }
   
   initCards(): void{
-    let win = false;
     let st = "default";
     for(let i = 0; i < this.length; i++)
     {
-      win = this.generateCard();
-      if(win)
-      {
-        this.winCards++;
-        this.cards[i] = new Card(i, win, this.winCards, st);
-      }
-      else
-      {
-        this.cards[i] = new Card(i, win, 0, st);
-      }
+      this.cards[i] = new Card(i, st);
+    }
+    for(let i = 0; i < this.winLength; i++)
+    {
+      this.winCards[i] = Math.floor(Math.random() * this.length);
     }
   }
 
   mixCards(): void{
-    let buffer: Card;
+    let buffer: number;
     for(let i = 0; i < 20; i++)
     {
-      let indexA = Math.floor(Math.random() * this.length);
-      let indexB = Math.floor(Math.random() * this.length);
-      buffer = this.cards[indexA];
-      this.cards[indexA] = this.cards[indexB];
-      this.cards[indexB] = buffer;
+      let indexA = Math.floor(Math.random() * this.winLength);
+      let indexB = Math.floor(Math.random() * this.winLength);
+      buffer = this.winCards[indexA];
+      this.winCards[indexA] = this.winCards[indexB];
+      this.winCards[indexB] = buffer;
     }
   }
 
@@ -79,39 +79,33 @@ export class Game1Component implements OnInit {
   }
 
   checkWin(): void{
-    this.counter++; 
-    console.log("serial: " + this.cards[this.lastCard].serialNumber + 
-      " counter: " + this.counter);
-    if(this.cards[this.lastCard].serialNumber === this.counter)
+    console.log("serial: " + this.cards[this.lastCard].cardId + 
+    " win card: " + this.winCards[this.counter] + 
+    " counter: " + this.counter);
+    if(this.winCards[this.counter] === this.cards[this.lastCard].cardId)
     {
-      if(this.counter === this.winCards)
+      if(this.counter === (this.winLength - 1))
       {
-        console.log("Win game");
-      }
-      if(this.counter > this.winCards)
-      {
-        this.cards[this.lastCard].state = "lose";
-        console.log("Lose1 game");
+        console.log("You win!");
+        this.counter = 0;
       }
     }
     else
     {
       this.cards[this.lastCard].state = "lose";
-      console.log("Lose2 game");
+      console.log("Game over");
+      this.counter = 0;
     }
+    this.counter++; 
   }
 }
 
 export class Card {
   cardId: number;
-  isWinn: boolean;
-  serialNumber: number;
   state: string;
 
-  constructor(id: number, win: boolean, sn: number, st: string){
-    this.cardId =id;
-    this.isWinn = win;
-    this.serialNumber = sn;
+  constructor(id: number, st: string){
+    this.cardId = id;
     this.state = st;
   }
 }

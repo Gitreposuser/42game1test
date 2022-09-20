@@ -8,15 +8,13 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 export class CardComponent{
   @Input() chCardId: number = 0;
-  @Input() chIsWin: boolean = false;
-  @Input() chSerialNumber = 0;
   @Input() chState = 'default';
 
   @Output() getData = new EventEmitter<number>();
 
   getId(chCardId:number){
     this.getData.emit(chCardId);
-    /*
+    
     if('default' === this.chState)
     {
       this.chState = 'flipped';
@@ -25,6 +23,5 @@ export class CardComponent{
     {
       this.chState = 'default';
     }
-    */
   }
 }
