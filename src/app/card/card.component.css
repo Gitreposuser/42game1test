@@ -5,29 +5,44 @@
     border-radius: 5px;
 
     position: relative;
-    perspective: 1000px;
-    position: relative;
-    transition: transform 1s;
+    perspective: 600px;
     transform-style: preserve-3d;
 }
 
-.card-container:active{
-    transition: all 1;
+.card-container:active:hover{
     animation: clickAnim 1s;
+    transition-duration: 1s;
 }
 
 @keyframes clickAnim {
     0%{
         transform: rotateY(0deg);
     }
+    20%{
+        transform: rotateY(90deg);
+        background-color: rgb(70, 145, 70);
+    }
+    21%{
+        background-color: rgb(70, 145, 70);
+    }
     40%{
         transform: rotateY(180deg);
+        background-color: rgb(70, 145, 70);
     }
     60%{
         transform: rotateY(180deg);
+        background-color: rgb(70, 145, 70);
+    }
+    80%{
+        transform: rotateY(90deg);
+        background-color: #88a4b3;
+    }
+    81%{
+        background-color: #88a4b3;
     }
     100%{
         transform: rotateY(0deg);
+        background-color: #88a4b3;
     }
 }
 

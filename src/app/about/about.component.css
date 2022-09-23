@@ -48,3 +48,14 @@ img:hover{
     color: white;
     background-color: black;
 }
+
+a{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 700;
+    color: black;
+}
+
+a:hover{
+    color: white;
+    background-color: black;
+}

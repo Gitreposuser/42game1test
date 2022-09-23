@@ -14,7 +14,7 @@ export class CardComponent{
 
   getId(chCardId:number){
     this.getData.emit(chCardId);
-    
+    /*
     if('default' === this.chState)
     {
       this.chState = 'flipped';
@@ -23,5 +23,6 @@ export class CardComponent{
     {
       this.chState = 'default';
     }
+    */
   }
 }

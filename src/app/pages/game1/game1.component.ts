@@ -84,6 +84,7 @@ export class Game1Component implements OnInit {
     " counter: " + this.counter);
     if(this.winCards[this.counter] === this.cards[this.lastCard].cardId)
     {
+      this.cards[this.lastCard].state = "flipped";
       if(this.counter === (this.winLength - 1))
       {
         console.log("You win!");
